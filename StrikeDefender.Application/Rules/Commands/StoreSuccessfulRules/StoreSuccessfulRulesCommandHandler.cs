@@ -1,4 +1,5 @@
-﻿using StrikeDefender.Domain.Attacks;
+﻿using StrikeDefender.Application.Common.Interfaces;
+using StrikeDefender.Domain.Attacks;
 using StrikeDefender.Domain.Rules;
 
 namespace StrikeDefender.Application.Rules.Commands.StoreSuccessfulRules;
@@ -53,8 +54,8 @@ public class StoreSuccessfulRulesCommandHandler(
                 successfulAttack.MarkAsBlocked("System");
             }
         }
-
-        await _unitOfWork.CommitChangesAsync();
+ 
+         await _unitOfWork.CommitChangesAsync();
 
         return Result.Success;
     }

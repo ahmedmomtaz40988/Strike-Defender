@@ -73,7 +73,6 @@ public class StoreSuccessfulAttacksCommandHandler(
             attack.MarkAsSuccessful("sandbox");
         }
 
-
         if (resultsToAdd.Count > 0)
         {
             await _resultRepository.AddRangeAsync(resultsToAdd);

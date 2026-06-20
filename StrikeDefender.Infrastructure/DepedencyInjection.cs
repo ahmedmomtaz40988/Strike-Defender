@@ -16,6 +16,7 @@ using StrikeDefender.Infrastructure.AttackResults.Persistance;
 using StrikeDefender.Infrastructure.Attacks.Persistance;
 using StrikeDefender.Infrastructure.Common.Persistence.Data;
 using StrikeDefender.Infrastructure.Common.Persistence.Seeding;
+using StrikeDefender.Infrastructure.Dashboard;
 using StrikeDefender.Infrastructure.ExternalServices.AI.Configurations;
 using StrikeDefender.Infrastructure.ExternalServices.AI.Helpers;
 using StrikeDefender.Infrastructure.ExternalServices.AI.Providers;
@@ -60,6 +61,7 @@ namespace StrikeDefender.Infrastructure
             services.AddScoped<IAttackRepository, AttackRepository>();
             services.AddScoped<ISuccessfulAttackRepository, SuccessfulAttackRepository>();
             services.AddScoped<IRuleRepository, RuleRepository>();
+            services.AddScoped<IDashboardRepository, DashboardRepository>();
             services.AddScoped<IGenericRepository<Plan>, PlanRepository>();
             services.AddScoped<IGenericRepository<Attack>, AttackRepository>();
             services.AddScoped<IGenericRepository<WafRule>, RuleRepository>();

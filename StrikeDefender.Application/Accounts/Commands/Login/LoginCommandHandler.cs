@@ -40,6 +40,10 @@ namespace StrikeDefender.Application.Accounts.Commands.Login
                     "Auth.Locked",
                     "User is locked");
 
+            if(user.EmailConfirmed == false)
+                return Error.Validation(
+                    "Auth.EmailNotConfirmed",
+                    "Email address is not confirmed");
             var jwt = await _tokenService.GenerateTokenAsync(user, userManager);
             var refreshTokenValue = Convert.ToBase64String(
                 RandomNumberGenerator.GetBytes(64));
